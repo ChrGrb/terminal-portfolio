@@ -1,0 +1,91 @@
+---
+---
+
+<div
+    class="flex flex-col rounded-md overflow-hidden bg-slate-800 h-full relative shadow-md"
+>
+    <div class="flex justify-start gap-2 px-3 py-2 bg-slate-200">
+        <div class="rounded-lg bg-red-600 h-3 w-3"></div>
+        <div class="rounded-lg bg-yellow-600 h-3 w-3"></div>
+        <div class="rounded-lg bg-green-600 h-3 w-3"></div>
+    </div>
+
+    <div class="h-full aspect-video flex flex-col justify-end text-slate-100">
+        <!-- Seperator -->
+        <div class="bg-slate-200 h-[2px] w-full"></div>
+
+        <!-- Text Input -->
+        <div
+            class="flex gap-1 px-3 py-2 justify-start align-center"
+            data-id="type"
+        >
+            <p>cd</p>
+            <input
+                id="dynamic-width-input"
+                type="text"
+                class="bg-transparent focus:border-none focus:outline-none w-0"
+            />
+
+            <span id="input-measurer" class="hidden whitespace-nowrap"></span>
+
+            <div id="cursor" class="w-1 h-full bg-slate-100 rounded-lg blink">
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    const inputElement: HTMLInputElement | null = document.getElementById(
+        "dynamic-width-input"
+    ) as HTMLInputElement | null;
+
+    if (inputElement === null) {
+        console.error("Input element not found");
+    } else {
+        window.addEventListener("DOMContentLoaded", () => {
+            inputElement.focus();
+        });
+        inputElement.addEventListener("input", () => {
+            const measurer = document.getElementById("input-measurer");
+            if (measurer === null) {
+                console.error("Measurer element not found");
+                return;
+            }
+
+            const inputText = inputElement.value;
+
+            // Set the content of the hidden span to the input text
+            measurer.textContent = inputText;
+
+            // Make the hidden span visible just to measure its width
+            measurer.classList.remove("hidden");
+
+            // Set the input width based on the hidden span width
+            inputElement.style.width = `${measurer.offsetWidth}px`;
+
+            // Hide the hidden span again
+            measurer.classList.add("hidden");
+        });
+    }
+</script>
+
+<style>
+    @keyframes blink {
+        0%,
+        100% {
+            opacity: 1;
+        }
+        50% {
+            opacity: 0;
+        }
+    }
+
+    .blink {
+        animation: blink 1s linear infinite;
+    }
+
+    #dynamic-width-input {
+        color: transparent;
+        text-shadow: 0 0 0 #fff; /* Set the text shadow to match the desired text color */
+    }
+</style>

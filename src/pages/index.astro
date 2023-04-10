@@ -1,81 +1,21 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import Card from '../components/Card.astro';
+import Terminal from "../components/Terminal/Terminal.svelte";
 ---
 
-<Layout title="Welcome to Astro.">
-	<main>
-		<h1>Welcome to <span class="text-gradient">Astro</span></h1>
-		<p class="instructions">
-			To get started, open the directory <code>src/pages</code> in your project.<br />
-			<strong>Code Challenge:</strong> Tweak the "Welcome to Astro" message above.
-		</p>
-		<ul role="list" class="link-card-grid">
-			<Card
-				href="https://docs.astro.build/"
-				title="Documentation"
-				body="Learn how Astro works and explore the official API docs."
-			/>
-			<Card
-				href="https://astro.build/integrations/"
-				title="Integrations"
-				body="Supercharge your project with new frameworks and libraries."
-			/>
-			<Card
-				href="https://astro.build/themes/"
-				title="Themes"
-				body="Explore a galaxy of community-built starter themes."
-			/>
-			<Card
-				href="https://astro.build/chat/"
-				title="Community"
-				body="Come say hi to our amazing Discord community. ❤️"
-			/>
-		</ul>
-	</main>
-</Layout>
+<div class="bg-slate-1000">
+    <body>
+        <main>
+            <div class="m-20">
+                <Terminal client:load />
+            </div>
+        </main>
+    </body>
+</div>
 
 <style>
-	main {
-		margin: auto;
-		padding: 1.5rem;
-		max-width: 60ch;
-	}
-	h1 {
-		font-size: 3rem;
-		font-weight: 800;
-		margin: 0;
-	}
-	.text-gradient {
-		background-image: var(--accent-gradient);
-		-webkit-background-clip: text;
-		-webkit-text-fill-color: transparent;
-		background-size: 400%;
-		background-position: 0%;
-	}
-	.instructions {
-		line-height: 1.6;
-		margin: 1rem 0;
-		border: 1px solid rgba(var(--accent), 25%);
-		background-color: white;
-		padding: 1rem;
-		border-radius: 0.4rem;
-	}
-	.instructions code {
-		font-size: 0.875em;
-		font-weight: bold;
-		background: rgba(var(--accent), 12%);
-		color: rgb(var(--accent));
-		border-radius: 4px;
-		padding: 0.3em 0.45em;
-	}
-	.instructions strong {
-		color: rgb(var(--accent));
-	}
-	.link-card-grid {
-		display: grid;
-		grid-template-columns: repeat(auto-fit, minmax(24ch, 1fr));
-		gap: 1rem;
-		padding: 0;
-	}
+    .star-background {
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' version='1.1' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns:svgjs='http://svgjs.dev/svgjs' viewBox='0 0 800 800'%3E%3Cdefs%3E%3ClinearGradient x1='50%25' y1='0%25' x2='50%25' y2='100%25' id='ffflurry-grad' gradientTransform='rotate(270)'%3E%3Cstop stop-color='hsl(238, 82%25, 13%25)' stop-opacity='1' offset='0%25'%3E%3C/stop%3E%3Cstop stop-color='hsl(185, 53%25, 55%25)' stop-opacity='1' offset='45%25'%3E%3C/stop%3E%3Cstop stop-color='hsl(0, 73%25, 55%25)' stop-opacity='1' offset='100%25'%3E%3C/stop%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='100%25' height='100%25' fill='hsl(238, 82%25, 13%25)'%3E%3C/rect%3E%3Cg fill='url(%23ffflurry-grad)'%3E%3Crect width='518' height='6' x='-118' y='208' rx='3' transform='rotate(30, 141, 211)' opacity='0.41'%3E%3C/rect%3E%3Crect width='391' height='6' x='212.5' y='24' rx='3' transform='rotate(30, 408, 27)' opacity='0.39'%3E%3C/rect%3E%3Crect width='103' height='6' x='639.5' y='749' rx='3' transform='rotate(30, 691, 752)' opacity='0.34'%3E%3C/rect%3E%3Crect width='581' height='6' x='-176.5' y='558' rx='3' transform='rotate(30, 114, 561)' opacity='0.45'%3E%3C/rect%3E%3Crect width='764' height='6' x='280' y='280' rx='3' transform='rotate(30, 662, 283)' opacity='0.27'%3E%3C/rect%3E%3Crect width='579' height='6' x='465.5' y='715' rx='3' transform='rotate(30, 755, 718)' opacity='0.08'%3E%3C/rect%3E%3Crect width='382' height='6' x='-123' y='333' rx='3' transform='rotate(30, 68, 336)' opacity='0.84'%3E%3C/rect%3E%3Crect width='715' height='6' x='-123.5' y='595' rx='3' transform='rotate(30, 234, 598)' opacity='0.84'%3E%3C/rect%3E%3Crect width='516' height='6' x='-60' y='454' rx='3' transform='rotate(30, 198, 457)' opacity='0.10'%3E%3C/rect%3E%3Crect width='149' height='6' x='253.5' y='462' rx='3' transform='rotate(30, 328, 465)' opacity='0.14'%3E%3C/rect%3E%3Crect width='811' height='6' x='-18.5' y='731' rx='3' transform='rotate(30, 387, 734)' opacity='0.90'%3E%3C/rect%3E%3Crect width='318' height='6' x='-117' y='396' rx='3' transform='rotate(30, 42, 399)' opacity='0.77'%3E%3C/rect%3E%3Crect width='881' height='6' x='281.5' y='586' rx='3' transform='rotate(30, 722, 589)' opacity='0.94'%3E%3C/rect%3E%3Crect width='79' height='6' x='584.5' y='773' rx='3' transform='rotate(30, 624, 776)' opacity='0.87'%3E%3C/rect%3E%3Crect width='300' height='6' x='-114' y='597' rx='3' transform='rotate(30, 36, 600)' opacity='0.10'%3E%3C/rect%3E%3Crect width='370' height='6' x='116' y='362' rx='3' transform='rotate(30, 301, 365)' opacity='0.50'%3E%3C/rect%3E%3Crect width='519' height='6' x='304.5' y='604' rx='3' transform='rotate(30, 564, 607)' opacity='0.78'%3E%3C/rect%3E%3Crect width='667' height='6' x='-36.5' y='162' rx='3' transform='rotate(30, 297, 165)' opacity='0.10'%3E%3C/rect%3E%3Crect width='673' height='6' x='31.5' y='221' rx='3' transform='rotate(30, 368, 224)' opacity='0.17'%3E%3C/rect%3E%3Crect width='152' height='6' x='-6' y='489' rx='3' transform='rotate(30, 70, 492)' opacity='0.73'%3E%3C/rect%3E%3Crect width='718' height='6' x='266' y='687' rx='3' transform='rotate(30, 625, 690)' opacity='0.28'%3E%3C/rect%3E%3Crect width='122' height='6' x='387' y='403' rx='3' transform='rotate(30, 448, 406)' opacity='0.80'%3E%3C/rect%3E%3Crect width='283' height='6' x='209.5' y='532' rx='3' transform='rotate(30, 351, 535)' opacity='0.20'%3E%3C/rect%3E%3Crect width='793' height='6' x='317.5' y='471' rx='3' transform='rotate(30, 714, 474)' opacity='0.23'%3E%3C/rect%3E%3Crect width='626' height='6' x='440' y='88' rx='3' transform='rotate(30, 753, 91)' opacity='0.69'%3E%3C/rect%3E%3Crect width='538' height='6' x='189' y='238' rx='3' transform='rotate(30, 458, 241)' opacity='0.56'%3E%3C/rect%3E%3Crect width='304' height='6' x='109' y='494' rx='3' transform='rotate(30, 261, 497)' opacity='0.38'%3E%3C/rect%3E%3Crect width='579' height='6' x='-149.5' y='397' rx='3' transform='rotate(30, 140, 400)' opacity='0.71'%3E%3C/rect%3E%3Crect width='525' height='6' x='-77.5' y='307' rx='3' transform='rotate(30, 185, 310)' opacity='0.14'%3E%3C/rect%3E%3Crect width='152' height='6' x='224' y='288' rx='3' transform='rotate(30, 300, 291)' opacity='0.48'%3E%3C/rect%3E%3Crect width='149' height='6' x='691.5' y='333' rx='3' transform='rotate(30, 766, 336)' opacity='0.26'%3E%3C/rect%3E%3Crect width='404' height='6' x='347' y='248' rx='3' transform='rotate(30, 549, 251)' opacity='0.09'%3E%3C/rect%3E%3Crect width='329' height='6' x='293.5' y='483' rx='3' transform='rotate(30, 458, 486)' opacity='0.98'%3E%3C/rect%3E%3Crect width='620' height='6' x='437' y='210' rx='3' transform='rotate(30, 747, 213)' opacity='0.68'%3E%3C/rect%3E%3Crect width='380' height='6' x='497' y='375' rx='3' transform='rotate(30, 687, 378)' opacity='0.37'%3E%3C/rect%3E%3Crect width='54' height='6' x='98' y='467' rx='3' transform='rotate(30, 125, 470)' opacity='0.72'%3E%3C/rect%3E%3Crect width='260' height='6' x='144' y='421' rx='3' transform='rotate(30, 274, 424)' opacity='0.42'%3E%3C/rect%3E%3Crect width='146' height='6' x='85' y='96' rx='3' transform='rotate(30, 158, 99)' opacity='0.44'%3E%3C/rect%3E%3Crect width='307' height='6' x='-131.5' y='479' rx='3' transform='rotate(30, 22, 482)' opacity='0.15'%3E%3C/rect%3E%3Crect width='301' height='6' x='30.5' y='528' rx='3' transform='rotate(30, 181, 531)' opacity='0.41'%3E%3C/rect%3E%3Crect width='299' height='6' x='423.5' y='58' rx='3' transform='rotate(30, 573, 61)' opacity='0.44'%3E%3C/rect%3E%3Crect width='487' height='6' x='-119.5' y='654' rx='3' transform='rotate(30, 124, 657)' opacity='0.73'%3E%3C/rect%3E%3Crect width='439' height='6' x='5.5' y='191' rx='3' transform='rotate(30, 225, 194)' opacity='0.31'%3E%3C/rect%3E%3Crect width='433' height='6' x='257.5' y='753' rx='3' transform='rotate(30, 474, 756)' opacity='0.70'%3E%3C/rect%3E%3Crect width='370' height='6' x='41' y='375' rx='3' transform='rotate(30, 226, 378)' opacity='0.81'%3E%3C/rect%3E%3Crect width='489' height='6' x='-183.5' y='738' rx='3' transform='rotate(30, 61, 741)' opacity='0.40'%3E%3C/rect%3E%3Crect width='277' height='6' x='193.5' y='647' rx='3' transform='rotate(30, 332, 650)' opacity='0.69'%3E%3C/rect%3E%3Crect width='825' height='6' x='207.5' y='179' rx='3' transform='rotate(30, 620, 182)' opacity='0.36'%3E%3C/rect%3E%3Crect width='105' height='6' x='486.5' y='727' rx='3' transform='rotate(30, 539, 730)' opacity='0.69'%3E%3C/rect%3E%3Crect width='160' height='6' x='344' y='105' rx='3' transform='rotate(30, 424, 108)' opacity='0.68'%3E%3C/rect%3E%3Crect width='124' height='6' x='159' y='735' rx='3' transform='rotate(30, 221, 738)' opacity='0.69'%3E%3C/rect%3E%3Crect width='262' height='6' x='294' y='319' rx='3' transform='rotate(30, 425, 322)' opacity='0.49'%3E%3C/rect%3E%3Crect width='173' height='6' x='-24.5' y='259' rx='3' transform='rotate(30, 62, 262)' opacity='0.40'%3E%3C/rect%3E%3Crect width='50' height='6' x='645' y='56' rx='3' transform='rotate(30, 670, 59)' opacity='0.78'%3E%3C/rect%3E%3Crect width='150' height='6' x='184' y='45' rx='3' transform='rotate(30, 259, 48)' opacity='0.16'%3E%3C/rect%3E%3Crect width='666' height='6' x='158' y='159' rx='3' transform='rotate(30, 491, 162)' opacity='0.21'%3E%3C/rect%3E%3Crect width='395' height='6' x='155.5' y='98' rx='3' transform='rotate(30, 353, 101)' opacity='0.73'%3E%3C/rect%3E%3Crect width='750' height='6' x='75' y='585' rx='3' transform='rotate(30, 450, 588)' opacity='0.35'%3E%3C/rect%3E%3Crect width='154' height='6' x='-33' y='145' rx='3' transform='rotate(30, 44, 148)' opacity='0.99'%3E%3C/rect%3E%3Crect width='226' height='6' x='385' y='65' rx='3' transform='rotate(30, 498, 68)' opacity='0.20'%3E%3C/rect%3E%3Crect width='369' height='6' x='-107.5' y='36' rx='3' transform='rotate(30, 77, 39)' opacity='0.61'%3E%3C/rect%3E%3Crect width='827' height='6' x='159.5' y='470' rx='3' transform='rotate(30, 573, 473)' opacity='0.29'%3E%3C/rect%3E%3Crect width='87' height='6' x='320.5' y='399' rx='3' transform='rotate(30, 364, 402)' opacity='0.82'%3E%3C/rect%3E%3Crect width='381' height='6' x='360.5' y='348' rx='3' transform='rotate(30, 551, 351)' opacity='0.29'%3E%3C/rect%3E%3C/g%3E%3C/svg%3E");
+        background-repeat: repeat;
+        height: 100vh;
+    }
 </style>

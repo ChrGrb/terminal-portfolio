@@ -1,0 +1,27 @@
+---
+import { Image } from "@astrojs/image/components";
+import heroImage from "../assets/hero-image.webp";
+import Typewriter from "./Typewriter.svelte";
+---
+
+<div class="flex">
+    <div
+        class="bg-slate-800 text-slate-100 basis-1/2 aspect-square flex align-middle justify-center"
+    >
+        <span
+            class="my-auto flex flex-col align-middle justify-center w-full px-20"
+        >
+            <h1 class="text-2xl font-extrabold mx-auto">I am</h1>
+            <h2 class="text-emerald-400 text-4xl font-extrabold mx-auto">
+                <Typewriter client:only="svelte" />
+            </h2>
+        </span>
+    </div>
+    <div
+        class="bg-slate-800 text-slate-800 basis-1/2 aspect-square flex align-middle justify-center"
+    >
+        <span class="my-auto p-20">
+            <Image src={heroImage} alt="Hero Image" />
+        </span>
+    </div>
+</div>

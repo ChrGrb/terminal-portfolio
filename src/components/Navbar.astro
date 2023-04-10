@@ -1,0 +1,20 @@
+---
+import { Image } from "@astrojs/image/components";
+import logoImage from "../assets/logo.svg";
+---
+
+<div class="w-full fixed top-0">
+    <nav class="text-slate-100 flex justify-between px-10 h-20">
+        <Image
+            src={logoImage}
+            alt="logo"
+            class="h-3/4 w-auto my-auto hover:scale-75 transition-transform text-slate-100"
+        />
+
+        <div class="flex gap-5 my-auto">
+            <a href="/" class="py-4 text-lg font-bold">Home</a>
+            <a href="/about" class="py-4 text-lg font-bold">About</a>
+            <a href="/contact" class="py-4 text-lg font-bold">Contact</a>
+        </div>
+    </nav>
+</div>
